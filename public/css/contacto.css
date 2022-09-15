@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.paginacontacto {
+    background-color: #fbf2b3d5;
+}
+
+.huno {
+    color: #000;
+    font-size: 60px;
+    text-align: center;
+}
+
+.hdos {
+    color: #fff;
+    background: #222;
+    text-align: center;
+}
+
+.parrafo {
+    text-align: center;
+    color: #000;
+}
+
+/* Forms Styles */
+.flex-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #222;
+    margin: 50px 50px;
+    padding: 20px;
+}
+
+.form {
+    min-width: 400px;
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+    order: 5;
+}
+
+.form__input {
+    width: 100%;
+    padding: 7px;
+    margin: 6px 0;
+    border: none;
+    border-bottom: 3px solid #1c7;
+    background: transparent ;
+    color: #fff;
+}
+
+.form__input:focus {
+    background: linear-gradient(to bottom, transparent, #111);
+    outline: none;
+    border-bottom: 3px solid #5f9;
+}
+
+.form textarea{
+    min-height: 140px;
+    resize: none;
+}
+
+.form-img {
+    flex: 1;
+    display: flex;
+    padding: 10px;
+    min-width: 300px;
+    max-width: 500px;
+    order: 2;
+    
+}
+
+.form-img div {
+    padding: 20px;
+}
+
+.img-container {
+    margin: auto;
+    
+}
+
+.img-container div {
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    padding: 60px;   
+}
+
+
+.form-img img {
+    width: 50%;
+    margin: auto;
+}
+
+.form__submit {
+    width: 100%;
+    padding: 7px;
+    margin: 6px 0;
+    border: none;
+    background: transparent ;
+    color: #fff;
+    background-color: #094;
+}
+
+.form__submit:hover {
+    background-color: #072;
+}
+.form__submit:focus{
+    background: #094;
+}
+.form__submit:active{
+    background: linear-gradient(to bottom, #072, #050);
+}
+
+/* ---------------------------------------------------------- */
+

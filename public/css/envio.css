@@ -1,0 +1,143 @@
+:root{
+    --l: '¡F';
+    --l: 'e';
+    --l: 'l';
+    --l: 'i';
+    --l: 'c';
+    --l: 'i';
+    --l: 'd';
+    --l: 'a';
+    --l: 'd';
+    --l: 'e';
+    --l: 's!';
+    --l: 'Email';
+    --l: 'enviado';
+    --l: 'con';
+    --l: 'éxito';
+    --color-1: #00bef8;
+    --color-2: #ff4d00;
+    --color-3: #ffe600;
+    --color-4: #bb00ff;
+    --color-5: 
+}
+
+*{
+    margin: 0;
+    padding: 0
+;}
+
+.container_envio{
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_ev{
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_envio span{
+    font-size: 80pt;
+    font-weight: bold;
+    position: relative;
+    font-family: 'Fredoka One', cursive;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.container_ev span{
+    font-size: 50pt;
+    font-weight: bold;
+    position: relative;
+    font-family: 'Fredoka One', cursive;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.container_envio span::before{
+    content: var(--l);
+    position: absolute;
+    transform: scale(1.1);
+    filter: blur(15px);   
+}
+.container_ev span::before{
+    content: var(--l);
+    position: absolute;
+    transform: scale(1.1);
+    filter: blur(15px);   
+}
+
+.container_envio span::after{
+    content: var(--l);
+    position: absolute;
+    top: 80%;
+    left: 0;
+    filter: blur(30px);
+    transform: rotateX(50deg);
+}
+.container_ev span::after{
+    content: var(--l);
+    position: absolute;
+    top: 80%;
+    left: 0;
+    filter: blur(30px);
+    transform: rotateX(50deg);
+}
+
+.container_envio span:hover{
+    filter: contrast(250%);
+}
+.container_ev span:hover{
+    filter: contrast(250%);
+}
+
+.container_envio span:nth-child(1){
+    color: var(--color-1);
+}
+.container_ev span:nth-child(1){
+    color: var(--color-1);
+}
+
+.container_envio span:nth-child(2){
+    color: var(--color-2);
+}
+.container_ev span:nth-child(2){
+    color: var(--color-4);
+}
+.container_envio span:nth-child(3){
+    color: var(--color-3);
+}
+.container_ev span:nth-child(3){
+    color: var(--color-2);
+}
+.container_envio span:nth-child(4){
+    color: var(--color-4);
+}
+.container_ev span:nth-child(4){
+    color: var(--color-3);
+}
+.container_envio span:nth-child(5){
+    color: var(--color-1);
+}
+.container_envio span:nth-child(6){
+    color: #ff0697;
+}
+.container_envio span:nth-child(7){
+    color: var(--color-3);
+}
+.container_envio span:nth-child(8){
+    color: var(--color-2);
+}
+.container_envio span:nth-child(9){
+    color: var(--color-4);
+}
+.container_envio span:nth-child(10){
+    color: var(--color-1);
+}
+.container_envio span:nth-child(11){
+    color: var(--color-2);
+}
+
+

@@ -1,0 +1,36 @@
+ <div class="text-center m-5">
+    <hr>
+    <h1>
+        {{ titulo }}
+    </h1>
+    <hr>
+</div>
+
+<div class="cont_h2">
+            <h2>
+                Listado de Contactos
+            </h2>
+    </div>
+    <div class="container">
+    
+
+    <table class="table table-dark">
+        <thead>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            {{#each results}}
+            <tr>
+                {{!-- Para traer datos de la BS --}}
+                <td>{{idContacto}}</td>
+                <td>{{nombre}}</td>
+                <td>{{email}}</td>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+</div> 
+

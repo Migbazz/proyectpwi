@@ -1,0 +1,57 @@
+-- Creación del a Base de dato --
+
+-- Seguir Comando por comando para el CRUD --
+
+create database if not exists contacto;
+
+use contacto;
+
+create table if not exists contactoss(
+idContacto int not null auto_increment primary key,
+nombre varchar(40) not null,
+email varchar(40) not null
+);
+
+select * from contactoss;
+
+-- Insertando datos --
+
+insert into contactoss values 
+(null,"miguel","ebazzarelli@gmail.com"),
+(null,"Juan","Juanc@gmail.com"),
+(null,"Pedro","Pedroh@hotmail.com"),
+(null,"Felipe","Felipondio@yahoo.com.ar"),
+(null, "Carlos","Carlibala@gmail.com"),
+(null,"miguel","ebazzarelli@gmail.com"),
+(null,"Juan","Juanc@gmail.com"),
+(null,"Pedro","Pedroh@hotmail.com"),
+(null,"Felipe","Felipondio@yahoo.com.ar"),
+(null, "Carlos","Carlibala@gmail.com"),
+(null,"miguel","ebazzarelli@gmail.com"),
+(null,"Juan","Juanc@gmail.com"),
+(null,"Pedro","Pedroh@hotmail.com"),
+(null,"Felipe","Felipondio@yahoo.com.ar"),
+(null, "Carlos","Carlibala@gmail.com"),
+(null,"miguel","ebazzarelli@gmail.com"),
+(null,"Juan","Juanc@gmail.com"),
+(null,"Pedro","Pedroh@hotmail.com"),
+(null,"Felipe","Felipondio@yahoo.com.ar"),
+(null, "Carlos","Carlibala@gmail.com");
+
+-- Seleccionando tabla--
+select * from contactoss;
+-- Borrando registros --
+delete from contactoss where idContacto between 5 and 15;
+
+select * from contactoss;
+
+-- Actualizando Registros -
+update contactoss set idContacto = "5", nombre = "Ernesto", email = "Ernesto@gmail.com" where idContacto = 16;
+update contactoss set idContacto = "6", nombre = "Arturo", email = "Artur@gmail.com" where idContacto = 17;
+update contactoss set idContacto = "7", nombre = "Mercedes", email = "mechi@hotmail.com" where idContacto = 18;
+update contactoss set idContacto = "8", nombre = "Victoria", email = "viky@gmail.com" where idContacto = 19;
+update contactoss set idContacto = "9", nombre = "Karina", email = "Laprinces@yahoo.com.ar" where idContacto = 20;
+
+select * from contactoss;
+-- Eliminando Tabla --
+Drop table contactoss;

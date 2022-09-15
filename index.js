@@ -35,129 +35,81 @@ hbs.registerPartials(path.join(__dirname, "views/partials"));
 
 
 app.get('/', (req, res,) =>{
-    res.render('index', {
-        titulo: 'Bienvenidos a la App de la UTN'
-    })
+    res.render('index')
 })
 
-app.get('/formulario', (req, res) =>{
-    res.render('formulario', {
-        titulo:'Formulario para Productos',
-        style: 'formulario.css'
-    })
-});
+app.get('/nosotros', (req,res) =>{
+    res.render('nosotros')
+})
 
-// app.get('/productos', (req, res) =>{
+app.get('/listacontactos', (req, res) =>{
+
+    // ---RENDER PARA PODER SUBIR A HEROKU.. 
+         // COMENTAR EN MODO LOCAL 
+        res.render('listacontactos')
     
-//     let sql = 'SELECT * FROM productos';
-
-//     conexion.query(sql, (err, result) =>{
-//         if (err) throw err;
-//         res.render('productos', {
-//             titulo:'Formulario para Productos', 
-//             results: result
-//         });
-//     });
-        
-// });
+        // let sql = 'SELECT * FROM contactoss';
+    
+        // conexion.query(sql, (err, result) =>{
+        //     if (err) throw err;
+        //     res.render('listacontactos', {
+        //         titulo:'Visitas', 
+        //         results: result
+        //     });
+        // });
+            
+    });
 
 app.get('/contacto', (req,res) =>{
-    res.render('contacto',{
-        titulo: 'Formulario para Suscripción'
-    })
+    res.render('contacto')
 });
 
 
+app.post('/contacto', (req, res) => {
+    const { nombre, email } = req.body;
 
-app.post('/contacto', (req,res) =>{
-    const {nombre, email} = req.body
-
-
-    if (nombre == '' || email == '') {
-        let validacion = 'Rellene la Suscripción correctamente..';
-        res.render('contacto', {
-            titulo:'Formulario para Suscripcion',           
-            validacion
-        });
-    } else   {
-
-        console.log(nombre);
-        console.log(email);
-
-        async function envioMail(){
-
-            let transporter = nodemailer.createTransport({
-                host: 'smtp.gmail.com',
-                port: 465,
-                secure: true,
-                auth: {
-                    user: process.env.USEREMAIL,
-                    pass: process.env.PASSWORDEMAIL
-                }
-            });
-
-            let envio = await transporter.sendMail({
-                from: process.env.USEREMAIL,
-                to: `${email}`,
-                subject: 'Gracias por Suscribirse a nuestra Empresa',
-                html: `Muchas gracias por contactarnos, estaremos enviando su pedido a la brevedad. <br>
-                Todas nuestras promociones, ya estarán a su disposición`
-            });
-
-            // res.send(`Tu nombre es  ${nombre} y tu email registrado es ${email}`)
-            res.render('enviado', {
-                titulo: 'Email Enviado',
-                nombre,
-                email
-                })
-            }
-            envioMail()
-        }        
-})
-
-app.post('/formulario', (req, res) =>{
-    
-    //Desestructuración de datos (desestructuring)
-    // const {nombre, apellido, dni} = req.body;
-    const { nombre, precio } = req.body;
-
-    //Asigno datos a las variables enviadas desde el front
-    // let nombre = req.body.nombre;
-    // let precio = req.body.precio;
-
-    console.log(nombre, precio);
-    // == '' (si está vacío)
-    if (nombre == '' || precio == '') {
-        let validacion = 'Rellene los campos correctamente..';
-        res.render('formulario', {
-            titulo:'Formulario para Productos',           
-            validacion
-        });
+    if (nombre == "" || email == "") {
+    res.render('contacto');
     } else {
-        
-            let datos = {
-                nombre: nombre,
-                precio: precio
-            };
+        //POR FAVOR, AL DESCOMENTAR SQL, COMENTAR LA LINEA 106 y 110
+    // let datos = {
+    //     nombre: nombre,
+    //     email: email
+    // };
 
-            let sql = 'INSERT INTO productos SET ?';
+    // let sql = 'INSERT INTO contactoss SET ?';
 
-            conexion.query(sql, datos, (err, result) =>{
-                if (err) throw err;
-                res.render('formulario', {
-                    titulo:'Formulario para Productos'
-                })
-            })
-        
-    }})
+    // conexion.query(sql, datos, (err, result) => {
+    //     if (err) throw err;
+    //     res.render('enviado'); 
+    //     });
+    // };
+    async function envioMail() {
+        let transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true,
+            auth: {
+                user: process.env.USEREMAIL,
+                pass: process.env.PASSWORDEMAIL
+        },
+        });
 
-
-    // res.send(`Tus datos fueron han sido recibidos: Nombre: ${nombre} , Precio: ${precio}`);
+        let envio = await transporter.sendMail({
+            from: process.env.USEREMAIL,
+            to: `${email}`,
+            subject: "Gracias por Suscribirse",
+            html: `Muchas gracias por contactar con nosotros. <br>
+            Todas nuestras promociones estaran a su disposicion.`,
+        });
+        //EN PRUEBA LOCAL COMENTAR LINEA 106.
+        res.render('enviado');
+    }
+    envioMail();
+    // COMENTAR LA LLAVE CUANDO SE PRUEBE MODO LOCAL
+    }
+});
     
-        
-
-
-
 app.listen(PORT, () => {
     // console.log(`El servidor está trabajando en el Puerto ${PORT}`);
 })

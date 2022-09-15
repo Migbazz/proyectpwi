@@ -1,36 +1,47 @@
-<div class="container">
-
-<div class="text-center m-5">
+<body class="paginacontacto">
+    
+</body>
+<div class="title">
     <hr>
-    <h1>
-        {{ titulo }}
+    <h1 class="huno">
+        Contactá con nosotros 
     </h1>
+    <h2 class="hdos">Queremos escucharte</h2>
     <hr>
 </div>
+<div class="parrafo">
+    <p>- Para obtener más información sobre nuestros porductos <br>
+    - Si estás interesado/a en vender y distribuir nuestros productos <br> 
+    Rellená nuestro formulario y nos pondremos en contacto contigo lo antes posible. <br>Muchas gracias</p>
+</div>
 
-<div class="row">
-<form action="./contacto" method="post">
-    <div class="mb-3 row">
-        <label for="nombre" class="col-sm-2 col-form-label">Nombre: </label>
-    <div class="col-sm-10">
-        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre del usuario">
-    </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="email" class="col-sm-2 col-form-label">Email: </label>
-    <div class="col-sm-10">
-        <input type="email" class="form-control" name="email" id="email">
-    </div>
-    </div>
-    <div class="mb-3 text-center">
-        <input type="submit" class="button btn btn-success w-50 p-2" value="Me suscribo para llenarme de Spam">
-    </div>
-    <div class="text-center">
+<div class="flex-container">
+    <form action="contacto" method="post" class="form">
+        <div class="form__section">
+            <input type="text" class="form__input" name="nombre" required placeholder="Escriba su nombre">
+        </div>
+        <div class="form__section">
+            <input type="email" class="form__input" name="email" required placeholder="Escriba su Email">
+        </div>
+        <div class="form__section">
+            <textarea class="form__input" name="mensaje" placeholder="Escriba su mensaje"></textarea>
+        </div>
+        <div class="form__section">
+            <input type="submit" class="form__submit">
+        </div>
+        <div class="text-center">
         <h2 class="text-danger">
             {{validacion}}
         </h2>
     </div>
-</form>
+    </form>
+    <div class="form-img">
+        <div class="img-container">
+            <div>
+                <img src="imagen/email2.png" alt="Email">
+            </div>
+        </div>
+    </div>
+</div>
 
-</div>
-</div>
+    

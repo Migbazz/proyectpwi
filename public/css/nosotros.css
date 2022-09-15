@@ -1,0 +1,35 @@
+.nosotros {
+    background: #fbf2b3d5;
+}
+
+
+.titilar{
+    animation-name: titila;
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes titila {  
+    0% { opacity: 2.0; color: rgb(0, 126, 76) }
+    50% { opacity: 0.0; color: rgb(3, 50, 35); }
+    100% { opacity: 2.0; color: rgb(2, 58, 18); };
+}
+
+
+.foto-container{
+    margin: auto;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+.foto-container{
+    width: 50%;
+}
+
+.foto-container img{
+    float: right;
+    width: 400px;
+    margin-right: 15px;
+}

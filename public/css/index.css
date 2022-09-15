@@ -1,0 +1,274 @@
+:root{
+    --facebook: #3b5999;
+    --instagram: #e4405f;
+    --linkedin: #0077b5;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cuerpo {
+    background-color: #fbf2b3d5;
+}
+
+.title {
+    text-align: center;
+    padding: 40px;   
+}
+
+
+
+/* --------------Navbar Styles-------------*/
+#navbb {
+    background: #b3a95bd5 !important;
+}
+.collapse {
+    justify-content: flex-end;
+    font-size: 30px;
+}
+
+.navbar-brand img {
+    height: 100px;    
+}
+
+.cont_h2{
+    text-align: center;
+    margin: 50px;
+}
+
+
+
+/* -----STYLE NAV ITEMS -----  */
+.cosmecan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+.btn-neon{
+    color: #000;
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    margin: 5px;
+    padding: 15px 30px;
+    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+.btn-neon:hover{
+    color: #fff;
+    background: #f2d667fd;
+    box-shadow: 0 0 40px #f2d667fd, 0 0 80px #f2d667fd, 0 0 120px #f2d667fd;
+    transition-delay: .5s;
+}
+
+.btn-neon::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* -----------Borde 1 (Arriba)-------- */
+.btn-neon span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent,#f2d667fd);
+    animation: borderTop 2s linear infinite;
+}
+
+@keyframes borderTop{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+/* ------Borde 2(Derecho)------ */
+.btn-neon span:nth-child(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent,#f2d667fd);
+    animation: borderLeft 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes borderLeft{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+
+/* ------Borde 3(Abajo)------ */
+.btn-neon span:nth-child(3){
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to bottom, transparent,#f2d667fd);
+    animation: borderBottom 2s linear infinite;
+}
+
+@keyframes borderBottom {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+/* --------Borde 4 (izquierdo)-------- */
+.btn-neon span:nth-child(4){
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top, transparent,#f2d667fd);
+    animation: borderRight 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes borderRight {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+/* -------------------------FOOTER STYLE------------------------------------- */
+
+
+#foot {
+    background: #b3a95bd5 !important;
+    height: 150px;
+}
+
+.linkin{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.linkin ul li {
+    display: inline-block;
+    margin: 0 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.linkin ul li a{
+    display: block;
+    padding: 0 10px;
+    background: #333;
+    color: #fff;
+    line-height: 50px;
+    font-size: 18px;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0, .2);
+    transition: .2s;
+}
+.linkin ul:hover a{
+    filter: blur(2px);
+}
+.linkin ul li a:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 5px 0 rgba(0,0,0, .4);
+    filter: none;
+}
+
+.linkin ul li .linkedin:hover{
+    background: var(--linkedin);
+}
+.redes-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -70px;
+}
+
+.redes-container ul li {
+    display: inline-block;
+    margin: 0 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.redes-container ul li a{
+    display: block;
+    padding: 0 10px;
+    background: #333;
+    color: #fff;
+    line-height: 50px;
+    font-size: 18px;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0, .2);
+    transition: .2s;
+}
+
+.redes-container ul:hover a{
+    filter: blur(2px);
+}
+
+.redes-container ul li a:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 5px 0 rgba(0,0,0, .4);
+    filter: none;
+}
+
+.redes-container ul li .facebook:hover{
+    background: var(--facebook);
+}
+
+.redes-container ul li .instagram:hover{
+    background: var(--instagram);
+}
+
+
+
+
+
+
+/* ---------------------CARDS STYLE------------------------------ */
+.hh2 {
+    padding-top: 20px;
+}
+
+.card-container {
+    display: flex;
+    padding: 20px;
+    margin-left: 10px;
+}
+
+.card {
+    margin: 10px;
+}
+
+/* -------Enviado Styles--------- */
+
+.container__envio{
+    height: 50vh;
+    margin-top: 200px;
+}
+
