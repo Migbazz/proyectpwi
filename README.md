@@ -8,6 +8,7 @@ En este proyecto utilicé:
 -CSS
 -JavaScript
 -MySql
+-Bootstrap
 
 Requisitos para la entrega del trabajo: 3 o más páginas, base de datos, envío mail.
 
